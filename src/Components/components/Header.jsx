@@ -3,12 +3,14 @@ import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div>
-        <h1>Head Logo</h1>
-        <nav className='flex p-3 m-2 text-white bg-black'>
-            <NavLink className={'mx-3'}  to={'/'}>Home</NavLink>
-            <NavLink className={'mx-3'}  to={'/contact'} >Contact</NavLink>
-            <NavLink className={'mx-3'} to={'/about-page'}>About</NavLink>
+    <div className='flex items-baseline justify-between p-6 text-white bg-black rounded-sm'>
+                <h1 className='text-2xl'>Head Logo</h1>
+        <nav className='space-x-5 '>
+
+            <NavLink   to={'/'}>Home</NavLink>
+            <NavLink  to={'/about-page'}>About</NavLink>
+            <NavLink   to={'/contact'} >Contact</NavLink>
+   
            
         </nav>
     </div>

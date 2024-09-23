@@ -6,22 +6,26 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Header from "./Components/components/Header";
+import RootLayout from "./Components/components/RootLayout";
 
 const App = () => {
   console.log(data);
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <HomePage />,
+      element: <RootLayout />,
+      children: [
+        {
+          path: "/about-page",
+          element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+      ],
     },
-    {
-      path: "/about-page",
-      element: <About />,
-    },
-    {
-      path: "/contact",
-      element: <Contact />,
-    },
+
     {
       path: "*",
       element: <NotFound />,
