@@ -28,7 +28,7 @@ const Header = () => {
             <NavLink  to={'/about-page'}>About</NavLink>
             <NavLink   to={'/contact'} >Contact</NavLink>
             </nav> 
-       <button onClick={handleShow}>{show ?<ImCross /> :<FaBars className='hidden sm:flex'/>}</button> 
+       <button onClick={handleShow}>{(show) ?<ImCross className='hidden sm:flex' /> :<FaBars className='hidden sm:flex'/>}</button> 
     </div>
   )
 }
