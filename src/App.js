@@ -16,6 +16,10 @@ const App = () => {
       element: <RootLayout />,
       children: [
         {
+          index: true,
+          element: <HomePage />,
+        },
+        {
           path: "/about-page",
           element: <About />,
         },
