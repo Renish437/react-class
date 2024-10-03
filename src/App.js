@@ -1,15 +1,15 @@
 import React from "react";
 import HomePage from "./pages/HomePage";
-import post, { data } from "./data/data";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import Header from "./Components/components/Header";
-import RootLayout from "./Components/components/RootLayout";
+
+import RootLayout from "./Components/RootLayout";
+import Services from "./pages/Services";
 
 const App = () => {
-  console.log(data);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -26,6 +26,10 @@ const App = () => {
         {
           path: "/contact",
           element: <Contact />,
+        },
+        {
+          path: "/services",
+          element: <Services />,
         },
       ],
     },
