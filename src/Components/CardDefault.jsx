@@ -6,8 +6,10 @@ import {
     Typography,
     Button,
   } from "@material-tailwind/react";
+import { useNavigate } from "react-router";
    
   export function CardDefault({cata}) {
+    const nav=useNavigate();
     return (
       <Card className="mt-7 ">
         <CardHeader color="deep-orange" className="relative h-64">
@@ -26,7 +28,7 @@ import {
           </p>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button>Read More</Button>
+          <Button onClick={()=>nav(`/category-items/${cata.strCategory}`)}>Read More</Button>
         </CardFooter>
       </Card>
     );

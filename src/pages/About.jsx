@@ -1,12 +1,22 @@
 import React from 'react'
+import { mealCategories } from '../data/data'
 
 const About = () => {
   return (
-    <div>
-        <h1>This is about us
-        </h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas saepe molestias aliquid, iste atque ipsa beatae explicabo odio architecto, sequi incidunt corporis similique debitis magni assumenda inventore. Ipsam, aliquam libero.</p>
-    </div>
+    <>
+    <div className='heading'>Our Services</div>
+
+<div>
+{mealCategories.categories.map(({idCategory,categoryName,categoryImage,categoryDescription})=>{
+return <div className='flex justify-center space-x-5' key={idCategory}>
+  <h1>{categoryName}</h1>
+  <img src={categoryImage} alt="" />
+</div>
+})}
+</div>
+
+   
+    </>
   )
 }
 

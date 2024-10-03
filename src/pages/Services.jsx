@@ -1,22 +1,55 @@
-import React from 'react'
-import { mealCategories } from '../data/data'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { CardDefault } from '../Components/CardDefault'
 
 const Services = () => {
+
+  const [data, setData] = useState()
+  // const [load, setLoad] = useState()
+  // const [err, setErr] = useState()
+
+  const getData= async ()=>{
+// setLoad(true);
+try {
+  const response=await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
+ setData(response.data);
+// setLoad(false);
+} 
+catch (err) {
+
+  console.log(err.message);
+  // setLoad(false);
+  // setErr(err.message);
+
+  
+}  }
+
+useEffect(() => {
+  getData();
+}, [])
+
+ console.log(data);
+
+
+// if(load){
+//   return <h1>Loading...</h1>
+// }
+
+
   return (
-    <>
-    <div className='heading'>Our Services</div>
+    <div className='grid grid-cols-3 gap-6 p-5 sm:grid-cols-1 '>
 
-<div>
-{mealCategories.categories.map(({idCategory,categoryName,categoryImage,categoryDescription})=>{
-return <div className='flex justify-center space-x-5' key={idCategory}>
-  <h1>{categoryName}</h1>
-  <img src={categoryImage} alt="" />
-</div>
-})}
-</div>
+      {data && data.categories.map((cat,index)=>{
+        return(
+      
+            <CardDefault key={cat.idCategory} cata={cat}/>
+       
+        )
+      })}
 
-   
-    </>
+
+
+    </div>
   )
 }
 

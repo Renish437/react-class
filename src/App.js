@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound";
 
 import RootLayout from "./Components/RootLayout";
 import Services from "./pages/Services";
+import CategoryItems from "./pages/CategoryItems";
+import ItemDetail from "./pages/ItemDetail";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -18,6 +20,14 @@ const App = () => {
         {
           index: true,
           element: <HomePage />,
+        },
+        {
+          path: "category-items/:category",
+          element: <CategoryItems />,
+        },
+        {
+          path: "details/:id",
+          element: <ItemDetail />,
         },
         {
           path: "/about-page",

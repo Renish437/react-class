@@ -5,23 +5,19 @@ import { CardDefault } from '../Components/CardDefault'
 const HomePage = () => {
 
   const [data, setData] = useState()
-  const [load, setLoad] = useState()
-  // const [err, setErr] = useState()
+  // const [load, setLoad] = useState()
+ 
 
   const getData= async ()=>{
-setLoad(true);
+
 try {
   const response=await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
  setData(response.data);
-setLoad(false);
+
 } 
 catch (err) {
 
   console.log(err.message);
-  setLoad(false);
-  // setErr(err.message);
-
-  
 }  }
 
 useEffect(() => {
@@ -31,9 +27,7 @@ useEffect(() => {
  console.log(data);
 
 
-if(load){
-  return <h1>Loading...</h1>
-}
+
 
 
   return (
