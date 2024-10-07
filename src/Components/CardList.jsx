@@ -10,7 +10,7 @@ export function CardList({meals,category}) {
       <CardBody>
         <div className="flex items-center justify-between mb-4 text-center mx-[600px] sm:mx-2">
           <Typography variant="h5" color="blue-gray" className="grid grid-flow-row text-3xl">
-            Latest {category} 
+             {category} Items
           </Typography>
           
         </div>
@@ -31,7 +31,7 @@ export function CardList({meals,category}) {
                 </div>
               </div>
               <Typography color="blue-gray" variant="h6">
-                $900
+                ${idMeal}
               </Typography>
             </div>
           ))}
